@@ -41,6 +41,7 @@
             this.txtBoxTemperatur = new System.Windows.Forms.TextBox();
             this.txtBoxFeuchtigkeit = new System.Windows.Forms.TextBox();
             this.lblAuswertung = new System.Windows.Forms.Label();
+            this.btnAuswertung = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -74,6 +75,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnAuswertung);
             this.groupBox3.Controls.Add(this.lblAuswertung);
             this.groupBox3.Location = new System.Drawing.Point(218, 12);
             this.groupBox3.Name = "groupBox3";
@@ -168,6 +170,16 @@
             this.lblAuswertung.TabIndex = 0;
             this.lblAuswertung.Text = "label3";
             // 
+            // btnAuswertung
+            // 
+            this.btnAuswertung.Location = new System.Drawing.Point(39, 207);
+            this.btnAuswertung.Name = "btnAuswertung";
+            this.btnAuswertung.Size = new System.Drawing.Size(132, 36);
+            this.btnAuswertung.TabIndex = 1;
+            this.btnAuswertung.Text = "Auswertung";
+            this.btnAuswertung.UseVisualStyleBackColor = true;
+            this.btnAuswertung.Click += new System.EventHandler(this.btnAuswertung_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,6 +215,7 @@
         private System.Windows.Forms.TextBox txtBoxTemperatur;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblAuswertung;
+        private System.Windows.Forms.Button btnAuswertung;
     }
 }
 
