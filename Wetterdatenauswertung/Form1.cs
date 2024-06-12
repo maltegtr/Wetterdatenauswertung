@@ -14,14 +14,17 @@ namespace Wetterdatenauswertung
     public partial class Form1 : Form
     {
         string filename = @"..\..\dateien\wetterdaten.csv";
-        string inporttestfilename = @"..\..\dateien\test_wetterdaten.csv";
-        string exporttestfilename = @"..\..\dateien\wetterdaten_export.csv";
+        //string inporttestfilename = @"..\..\dateien\test_wetterdaten.csv";
+        //string exporttestfilename = @"..\..\dateien\wetterdaten_export.csv";
+
 
         List<wetterdatum> wetterdatenliste = new List<wetterdatum>();
+
 
         public Form1()
         {
             InitializeComponent();
+            lstBoxAusgabe.Items.Add($"Datum - Temperatur[°C] - Feuchtigkeit[%]");
         }
 
         private void btnEinlesen_Click(object sender, EventArgs e)
@@ -40,20 +43,21 @@ namespace Wetterdatenauswertung
 
         private void btnSpeichernListe_Click(object sender, EventArgs e)
         {
-
+            wetterdatum neuesWetter = new wetterdatum(dateTimePicker1.Value,double.Parse(txtBoxTemperatur.Text), double.Parse(txtBoxFeuchtigkeit.Text));
+            wetterdatenliste.Add(neuesWetter);
+            lstBoxAusgabe.Items.Add(neuesWetter.ToString());
         }
 
         private void Import()
         {
             int i = 0;
-            if (File.Exists(inporttestfilename))
+            if (File.Exists(filename))
             {
-                StreamReader myFile = new StreamReader(inporttestfilename, System.Text.Encoding.Default);
+                StreamReader myFile = new StreamReader(filename, System.Text.Encoding.Default);
                 while (!myFile.EndOfStream)
                 {
                     if (i == 0)
                     {
-                        lstBoxAusgabe.Items.Add($"Datum - Temperatur[°C] - Feuchtigkeit[%]");
                         myFile.ReadLine();
                         i++;
                     }
@@ -71,9 +75,9 @@ namespace Wetterdatenauswertung
         private void Export()
         {
             int i = 0;
-            if (File.Exists(exporttestfilename))
+            if (File.Exists(filename))
             {
-                StreamWriter myFile = new StreamWriter(exporttestfilename);
+                StreamWriter myFile = new StreamWriter(filename);
                 foreach (var content in wetterdatenliste)
                 {
                     if (i == 0)
