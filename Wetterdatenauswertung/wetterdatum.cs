@@ -32,13 +32,26 @@ namespace Wetterdatenauswertung
 
         public double Temperatur
         {
-            get { return temperatur; }
+            get 
+            {
+                if(Temperatur > 50 || Temperatur <= -50)
+                {
+                    throw new ArgumentOutOfRangeException("Der Eingegebene Wert muss zwischen -50°C und +50°C liegen!");
+                }
+                else
+                {
+                    return temperatur;
+                }
+            }
             set { temperatur = value; }
         }
 
         public double Feuchtigkeit
         {
-            get { return feuchtigkeit; }
+            get 
+            { 
+                return feuchtigkeit; 
+            }
             set { feuchtigkeit = value; }
         }
         public override string ToString()
