@@ -53,9 +53,25 @@ namespace Wetterdatenauswertung
 
         private void btnSpeichernListe_Click(object sender, EventArgs e)
         {
-            wetterdatum neuesWetter = new wetterdatum(dateTimePicker1.Value, double.Parse(txtBoxTemperatur.Text), double.Parse(txtBoxFeuchtigkeit.Text));
-            wetterdatenliste.Add(neuesWetter);
-            lstBoxAusgabe.Items.Add(neuesWetter.ToString());
+            try
+            {
+                wetterdatum neuesWetter = new wetterdatum(dateTimePicker1.Value, double.Parse(txtBoxTemperatur.Text), double.Parse(txtBoxFeuchtigkeit.Text));
+                wetterdatenliste.Add(neuesWetter);
+                lstBoxAusgabe.Items.Add(neuesWetter.ToString());
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show($"{ex.Message}");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Ungültige Eingabe. Bitte geben Sie eine gültige Zahl für die Temperatur und die Feuchtigkeit ein.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ein Fehler ist aufgetreten:\r\n{ex.Message}");
+            }
+           
         }
         private void btnAuswertung_Click(object sender, EventArgs e)
         {
