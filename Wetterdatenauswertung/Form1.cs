@@ -166,7 +166,7 @@ namespace Wetterdatenauswertung
             int i = 0;
             foreach (var content in wetterdatenliste)
             {
-                if (i != 0)
+                if (i == 0)
                 {
                     maximaltemperatur = content.Temperatur;
                     i++;
@@ -181,7 +181,7 @@ namespace Wetterdatenauswertung
             int i = 0;
             foreach (var content in wetterdatenliste)
             {
-                if (i != 0)
+                if (i == 0)
                 {
                     minimaltemperatur = content.Temperatur;
                     i++;

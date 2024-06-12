@@ -34,7 +34,7 @@ namespace Wetterdatenauswertung
         {
             get 
             {
-                if(Temperatur > 50 || Temperatur <= -50)
+                if(temperatur >= 50 || temperatur <= -50)
                 {
                     throw new ArgumentOutOfRangeException("Der Eingegebene Wert muss zwischen -50°C und +50°C liegen!");
                 }
