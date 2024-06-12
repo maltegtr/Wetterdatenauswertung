@@ -17,10 +17,17 @@ namespace Wetterdatenauswertung
             Temperatur = pTemperatur;
             Feuchtigkeit = pFeuchtigkeit;
         }
+        public wetterdatum(string pEinlesen)
+        {
+            string[] contentsplit = pEinlesen.Split(';');
+            Datum = DateTime.Parse(contentsplit[0]);
+            Temperatur = double.Parse(contentsplit[1]);
+            Feuchtigkeit = double.Parse(contentsplit[2]);
+        }
         public DateTime Datum
         {
             get { return datum; }
-            set { }
+            private set { datum = value; }
         } 
 
         public double Temperatur
@@ -36,7 +43,7 @@ namespace Wetterdatenauswertung
         }
         public override string ToString()
         {
-            return $"{Datum} - {Temperatur} - {Feuchtigkeit}";
+            return $"{Datum.ToString("yyyy - MM - dd HH:mm:ss")} - {Temperatur} - {Feuchtigkeit}";
         }
     }
 }
