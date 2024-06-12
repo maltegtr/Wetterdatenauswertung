@@ -16,5 +16,20 @@ namespace Wetterdatenauswertung
         {
             InitializeComponent();
         }
+
+        private void btnEinlesen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSpeichernDatei_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSpeichernListe_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

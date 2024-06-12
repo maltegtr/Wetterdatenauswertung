@@ -98,6 +98,7 @@
             this.btnEinlesen.TabIndex = 0;
             this.btnEinlesen.Text = "Einlesen Datei";
             this.btnEinlesen.UseVisualStyleBackColor = true;
+            this.btnEinlesen.Click += new System.EventHandler(this.btnEinlesen_Click);
             // 
             // btnSpeichernDatei
             // 
@@ -107,6 +108,7 @@
             this.btnSpeichernDatei.TabIndex = 1;
             this.btnSpeichernDatei.Text = "Speichern Datei";
             this.btnSpeichernDatei.UseVisualStyleBackColor = true;
+            this.btnSpeichernDatei.Click += new System.EventHandler(this.btnSpeichernDatei_Click);
             // 
             // btnSpeichernListe
             // 
@@ -116,6 +118,7 @@
             this.btnSpeichernListe.TabIndex = 0;
             this.btnSpeichernListe.Text = "Speichern Liste";
             this.btnSpeichernListe.UseVisualStyleBackColor = true;
+            this.btnSpeichernListe.Click += new System.EventHandler(this.btnSpeichernListe_Click);
             // 
             // dateTimePicker1
             // 
